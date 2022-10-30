@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="imgbox">
+    <div class="introduction">
+        <h2>Welcome to <span style="color: red;">Wave Tuning</span></h2>
+        <br/>
+        <h4>For performance improvements, body modifications you are at the right place. Make an appointment for your car by clicking on the button below.</h4>
+        <button type="button" class="btn btn-dark"><a href="appointment" style="color: white; text-decoration: none;">Make an appointment</a></button>
+    </div>
+</div>
+<hr style="background-color: rgba(0,0,0,0.93); margin: 0; height: 5px; opacity: 1;">
+<div class="row" style="padding: 2vh; background-color: white;">
+    <h2 class="subtitles" style="color: black;">Popular brands</h2>
+    {% for imageList in imageList %}
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2" style="text-align: center; padding: 3vh;">
+        <img src="{{url_for('static', filename = imageList)}}">
+    </div>
+    {% endfor %}
+</div>
+<div class="row" style="padding-right: 2vh; padding-top: 2vh;">
+    <div class="col-xs-12 col-sm-4">
+        <a href="WhatIsChiptuning">
+            <figure class="hover-img">
+                <img src="../static/images/40_hd_engine_wallpapers_engine_backgrounds_wallpaper_audi.jpg">
+                <figcaption>
+                    <h6>What is <br/>chiptuning?</h6>
+                </figcaption>
+            </figure>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="PopsAndBangs">
+        <figure class="hover-img">
+            <img class="gridimg" src="../static/images/181-tech-subaruexhaust-cobbtuning-000.jpg">
+            <figcaption>
+                <h6>pops & bangs</h6>
+            </figcaption>
+        </figure>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="projects">
+        <figure class="hover-img">
+            <img class="gridimg" src="../static/images/270187080_10228719072548325_3862964044201984817_n.jpg">
+            <figcaption>
+                <h6>Projects</h6>
+            </figcaption>
+        </figure>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="SupportedBrands">
+        <figure class="hover-img">
+            <img class="gridimg" src="../static/images/p90369551_highres.jpg">
+            <figcaption>
+                <h6>Supported brands</h6>
+            </figcaption>
+        </figure>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="DTE">
+        <figure class="hover-img">
+            <img class="gridimg" src="../static/images/power_control_settings.jpg">
+            <figcaption>
+                <h6>DTE Power Control X</h6>
+            </figcaption>
+        </figure>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="PowerMeasurement">
+        <figure class="hover-img">
+            <img class="gridimg" src="../static/images/schermopname_15.png">
+            <figcaption>
+                <h6>Power measurement with Dyno Pro</h6>
+            </figcaption>
+        </figure>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="Maxhaust">
+        <figure class="hover-img">
+            <img class="gridimg" src="../static/images/maxresdefault_1.jpg">
+            <figcaption>
+                <h6>Maxhaust Stage 4 <br/>Soundbooster</h6>
+            </figcaption>
+        </figure>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="ECOtuning">
+        <figure class="hover-img">
+             <img class="gridimg" src="../static/images/eco-tuning_0.png">
+            <figcaption>
+                <h6>Eco Tuning</h6>
+            </figcaption>
+        </figure>
+        </a>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <a href="S1orS2">
+        <figure class="hover-img">
+            <img class="gridimg" src="../static/images/ecu-bench-flash.jpeg">
+            <figcaption>
+                <h6>stage 1 <br/>or<br/>stage 2</h6>
+            </figcaption>
+        </figure>
+        </a>
+    </div>
+</div>
+{% endblock %}

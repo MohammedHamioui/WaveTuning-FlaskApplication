@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../static/images/M1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../static/images/M2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../static/images/M3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<hr style="background-color: white; margin: 0; height: 5px; opacity: 1;">
+<h2 class="subtitles" style="color: white; margin: 2vh">MAXHAUST STAGE 4 SOUNDBOOSTER</h2>
+<p class="infotext">
+The Maxhaust sound booster is an electrical module with software from Maxhaust. This module amplifies the engine sound acoustically, integrates additional functions and makes the system compatible with other vehicles.
+The system is controlled via existing buttons or switches on and around the steering wheel or via the app on your smart phone. For a stage 4 it concerns an ESM (electronic sound module) module where you can choose from 5 different sound profiles. In this module pops and bangs are adjustable.
+"Unleash your beast with <a href="https://maxhaust.be/">Maxhaust</a>.
+</p>
+{% endblock %}
