@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container p-5">
-    <h1 class="subtitles">Thank you for making the appointment.</h1>
+    <h1 class="subtitles">Thank you {{user.firstName}} {{user.lastName}} for making the appointment.</h1>
     <h3 class="subtitles">WaveTuning will contact you soon.</h3>
     <a href="/"><button class="button">Return</button></a>
 </div>

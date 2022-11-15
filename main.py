@@ -1,6 +1,7 @@
 import os
+
 from flask import Flask, render_template, request, flash, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy, Model
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///car.sqlite3'
@@ -38,10 +39,13 @@ def home():
 @app.route('/appointment/', methods=['GET', 'POST'])
 def appointment():
     if request.method == 'POST':
-        if not request.form['firstName'] or not request.form['lastName'] or not request.form['email'] or not request.form['make'] or not request.form['model'] or not request.form['year']:
+        if not request.form['firstName'] or not request.form['lastName'] or not request.form['email'] or not \
+        request.form['make'] or not request.form['model'] or not request.form['year']:
             flash('Please enter all the fields', 'error')
         else:
-            cars = car( firstName= request.form['firstName'],lastName=  request.form['lastName'], email=request.form['email'], make=request.form['make'], model=request.form['model'], year=request.form['year'])
+            cars = car(firstName=request.form['firstName'], lastName=request.form['lastName'],
+                       email=request.form['email'], make=request.form['make'], model=request.form['model'],
+                       year=request.form['year'])
             db.session.add(cars)
             db.session.commit()
             flash('Record was successfully added')
@@ -115,9 +119,13 @@ def ECOtuning():
 def S1orS2():
     return render_template('S1orS2.html')
 
+
 @app.route('/Confirm/')
 def Confirm():
-    return render_template('Confirm.html')
+    user = car.query.order_by(car.id.desc())
+    last_user = user.first()
+    return render_template('Confirm.html', user=last_user)
+
 
 if __name__ == '__main__':
     db.create_all()
